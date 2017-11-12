@@ -1,0 +1,112 @@
+#include "double_list.h"
+
+// The second part of creating a constant for our class
+const int DoubleList::kListCapacity;
+
+// YOUR MEMBER FUNCTION DEFINITIONS GO HERE
+
+//This is a constructor function to initialize an empty list
+DoubleList::DoubleList[array_size] {
+	array_size = 0;
+}
+
+//This is a function that inserts a double value into the array within DoubleList
+void DoubleList::Insert(double item) {
+	if(array_size < 10)
+	{
+		item = DoubleList[array_size];
+	}
+	else
+	{
+		cerr << "List Full";
+	}
+}
+
+//This is a function that returns an element at a specific index
+double DoubleList::GetElement(int array_index) {
+	if((DoubleList[array_index] - 1) == 0)
+	{
+		cerr << "No Item At Location";
+		return 0;
+	}
+	else
+	{
+		return DoubleList[array_index];
+	}
+}
+
+//This is a function that outputs the list of doubles to console
+void DoubleList::Output() {
+	for(int i = 1; i < (array_size - 1); i++)
+	{
+		cout << DoubleList[i] << ", " << DoubleList[array_size];
+	};
+}
+
+//This is a function that returns the current size of the list
+int DoubleList::GetSize() {
+	return array_size;
+}
+
+//This is a function that returns the sum of all doubles in the list
+double DoubleList::Sum() {
+	if(array_size >= 1)
+	{
+		double array_sum;
+		for(int i = 0; i < array_size; i++)
+		{
+			array_sum += DoubleList[i];
+		}
+		return array_sum;
+	}
+	else
+	{
+		cerr << "List Empty";
+		return 0.0;
+	}
+}
+
+//This a function that returns the average of all the doubles in the list
+double DoubleList::Average() {
+	if(array_size >= 1)
+	{
+		double array_sum;
+		for(int i = 1; i < array_size; i++)
+		{
+			array_sum += DoubleList[i];
+		}
+		double average = array_sum / array_size;
+		return average;
+	}
+	else
+	{
+		cerr << "List Empty";
+	}
+}
+
+//This is a function that returns largest value in the list
+double DoubleList::Max() {
+	if(array_size > 1)
+	{
+		int temp = 0;
+
+		for(int i = 0; i < array_size; i++)
+		{
+			if(DoubleList[i] > temp)
+			{
+				temp = DoubleList[i];
+			}
+		}
+
+		cout << "The biggest value is: " << temp << endl;
+	}
+	else
+	{
+		cerr << "List Empty";
+	}
+}
+
+//This is a function that clears the list (resets to empty)
+void DoubleList::Clear() {
+	array_size = 0;
+}
